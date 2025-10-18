@@ -11,9 +11,9 @@ class ViewController: UIViewController {
 
 
     @IBOutlet weak var counterText: UILabel!
-    var start = 0
-    let currentDate = Date()
     let dateFormatter = DateFormatter()
+    var start = 0
+
     
     @IBOutlet weak var plus: UIButton!
     @IBAction func plusAction(_ sender: Any) {
@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         counterText.text = "Значение счётчика: \(start)"
         history.text += "\n\(dateFormatter.string(from: Date())): значение изменено на +1"
     }
+    
     
     @IBOutlet weak var minus: UIButton!
     @IBAction func minusAction(_ sender: Any) {
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         dateFormatter.dateStyle = .medium
                 dateFormatter.timeStyle = .medium
-        dateFormatter.locale = Locale(identifier: "ru_RU") 
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         history.text = "История изменений:"
     }
 
